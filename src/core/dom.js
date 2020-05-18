@@ -45,6 +45,20 @@ class Dom {
   getCoords() {
     return this.$el.getBoundingClientRect();
   }
+
+  get data() {
+    return this.$el.dataset;
+  }
+
+  findAll(selector) {
+    return this.$el.querySelectorAll(selector);
+  }
+
+  css(styles = {}) {
+    Object.keys(styles).forEach((item) => {
+      this.$el.style[item] = styles[item];
+    });
+  }
 }
 
 export function $(selector) {
